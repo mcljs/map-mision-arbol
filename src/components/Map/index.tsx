@@ -1,5 +1,7 @@
 import { useRouter } from 'next/dist/client/router'
 import { MapContainer, TileLayer, Marker } from 'react-leaflet'
+import L from 'leaflet'
+import * as S from './styles'
 
 type Place = {
   id: string
@@ -15,6 +17,12 @@ export type MapProps = {
   places?: Place[]
 }
 
+const markerIcon = new L.Icon({
+  iconUrl: 'img/icon.png',
+  iconSize: [50, 50],
+  iconAnchor: [20, 40],
+  popupAnchor: [0, -40]
+})
 
 const MAPBOX_API_KEY = process.env.NEXT_PUBLIC_MAPBOX_API_KEY
 const MAPBOX_USERID = process.env.NEXT_PUBLIC_MAPBOX_USERID
@@ -38,11 +46,16 @@ const Map = ({ places }: MapProps) => {
   const router = useRouter()
 
   return (
+<S.MapWrapper>
     <MapContainer
       center={[8.111, -65.791]}
       zoom={7}
       style={{ height: '100%', width: '100%' }}
-
+      minZoom={7}
+      maxBounds={[
+          [-180, 180],
+          [180, -180]
+        ]}
     >
       <CustomTileLayer />
 
@@ -54,6 +67,7 @@ const Map = ({ places }: MapProps) => {
             key={`place-${id}`}
             position={[latitude, longitude]}
             title={name}
+            icon={markerIcon}
             eventHandlers={{
               click: () => {
                 router.push(`/place/${slug}`)
@@ -63,6 +77,7 @@ const Map = ({ places }: MapProps) => {
         )
       })}
     </MapContainer>
+</S.MapWrapper>
   )
 }
 
