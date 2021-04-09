@@ -27,7 +27,7 @@ function App({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
 <StickyNote>
         <p>
-          Regresa a la pagina web  <a href="https://nextjs.willianjusten.com.br">Fundación Misión Árbol</a>
+          Regresa a la pagina web  <a href="https://mision-arbol.tk/">Fundación Misión Árbol</a>
         </p>
       </StickyNote>
     </>
