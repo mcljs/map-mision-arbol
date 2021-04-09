@@ -18,7 +18,7 @@ export type MapProps = {
 }
 
 const markerIcon = new L.Icon({
-  iconUrl: 'img/icon.png',
+  iconUrl: 'img/logo2.svg',
   iconSize: [50, 50],
   iconAnchor: [20, 40],
   popupAnchor: [0, -40]
