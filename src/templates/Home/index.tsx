@@ -16,7 +16,7 @@ export default function HomeTemplate({ places }: MapProps) {
         canonical="https://mision-arbol.tk"
         openGraph={{
           url: 'https://mision-arbol.tk',
-          title: 'My Trips',
+          title: 'Misión Árbol',
           description:
             'Mapa de sitios que fueron recuperado por la Fundación Misión Árbol',
           images: [
