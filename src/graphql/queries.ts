@@ -21,6 +21,7 @@ export const GET_PAGE_BY_SLUG = gql`
       heading
       body {
         html
+        text
       }
     }
   }

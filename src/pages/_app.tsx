@@ -1,14 +1,16 @@
 import {StickyNote} from 'components/StickyNote'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
-
+import NextNprogress from 'nextjs-progressbar'
 import GlobalStyles from 'styles/global'
+import { DefaultSeo } from 'next-seo'
+import SEO from '../../next-seo.config'
+
 
 function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Sitios Recupedos | Misión Árbol</title>
         <link rel="shortcut icon" href="/img/logo.png" />
         <link rel="apple-touch-icon" href="/img/logo.png" />
         <link rel="manifest" href="/manifest.json" />
@@ -23,7 +25,14 @@ function App({ Component, pageProps }: AppProps) {
           content="Sitior Recuperados por la Fundación Misión Arbol"
         />
       </Head>
+      <DefaultSeo {...SEO} />
       <GlobalStyles />
+      <NextNprogress
+        color="#29d"
+        startPosition={0.3}
+        stopDelayMs={200}
+        height={3}
+      />
       <Component {...pageProps} />
 <StickyNote>
         <p>
