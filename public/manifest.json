@@ -1,0 +1,21 @@
+{
+  "name": "Misión Árbol - Sitios Recuperados",
+  "short_name": "Misión Arbol",
+  "icons": [
+    {
+      "src": "/img/logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/img/logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "background_color": "#06092B",
+  "description": "Sitios Recuperados por la Fundación Misión Árbol",
+  "display": "fullscreen",
+  "start_url": "/",
+  "theme_color": "#06092B"
+}
